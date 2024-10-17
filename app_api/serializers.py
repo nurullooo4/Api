@@ -37,6 +37,7 @@ class UserSerializer(ModelSerializer):
 class PostSerializer(ModelSerializer):
     owner = UserSerializer()
     comments = SerializerMethodField()
+    comment_count = SerializerMethodField()
 
     class Meta:
         model = Post
@@ -44,6 +45,9 @@ class PostSerializer(ModelSerializer):
 
     def get_comments(self, obj):
         return Comment.objects.filter(post=obj).values('id', 'owner', 'body', 'created_at', 'updated_at')
+
+    def get_comment_count(self, obj):
+        return Comment.objects.filter(post=obj).count()
 
 
 class CommentSerializer(ModelSerializer):
