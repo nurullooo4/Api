@@ -95,19 +95,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-#
-#
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'n49',
-#         'USER': 'postgres',
-#         'PASSWORD': '123',
-#         'PORT': 5432,
-#         'HOST': 'localhost',
-#     }
-# }
-#
+
 
 
 # Password validation
